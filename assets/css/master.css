@@ -4,10 +4,6 @@
   box-sizing: border-box;
 }
 
-main {
-  height: 100vh;
-}
-
 #random {
   display: flex;
   justify-content: center;
