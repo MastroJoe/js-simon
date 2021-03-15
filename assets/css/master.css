@@ -1,0 +1,16 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+main {
+  height: 100vh;
+}
+
+#random {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 60px;
+}
