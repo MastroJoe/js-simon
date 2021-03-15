@@ -6,7 +6,7 @@
 // Dopo che sono stati inseriti i 5 numeri,
 //  il software dice quanti e quali dei numeri da indovinare sono stati individuati.
 
-
+$(document).ready(function() {
 // array vuoto per i numeri generati
 var randomNumbers = [];
 // genero 5 numeri random da 1 a 100 e li mostro all'utente
@@ -14,11 +14,20 @@ randomNumberPc(1, 100);
 numberRange(randomNumbers, 100);
 // e stampo il risultato anche su HTML
 console.log("I numeri generati sono: " + randomNumbers);
-$("#primo").text(randomNumbers[0]);
-$("#secondo").text(randomNumbers[1]);
-$("#terzo").text(randomNumbers[2]);
-$("#quarto").text(randomNumbers[3]);
-$("#quinto").text(randomNumbers[4]);
+$('#primo').text(randomNumbers[0]);
+$('#secondo').text(randomNumbers[1]);
+$('#terzo').text(randomNumbers[2]);
+$('#quarto').text(randomNumbers[3]);
+$('#quinto').text(randomNumbers[4]);
+// parte timer di 10 secondi e nascondo i numeri allo scadere
+countdown();
+// chiedo all'utente di inserire i numeri che ha memorizzato
+// array vuoto numeri utente
+var userNumbers = [];
+
+});
+
+
 
 
 
@@ -37,3 +46,21 @@ function numberRange(array, max) {
     }
   }
 }
+
+// creo countdown di 10 secondi
+function countdown (){
+  var count = 10;
+  var timer = setInterval(function () {
+  // se il count è maggiore di 0
+  if (count > 0) {
+    // stampa il numero nell'HTML
+    $('#timer').text(count);
+  // altrimenti
+  } else {
+  // blocco il timer e nascondo tutto
+    clearInterval(timer);
+    $("#random").hide("slow");
+  }
+  count--;
+  }, 1000);
+};
