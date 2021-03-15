@@ -21,10 +21,16 @@ $('#quarto').text(randomNumbers[3]);
 $('#quinto').text(randomNumbers[4]);
 // parte timer di 10 secondi e nascondo i numeri allo scadere
 countdown();
-// chiedo all'utente di inserire i numeri che ha memorizzato
 // array vuoto numeri utente
 var userNumbers = [];
-
+// chiedo all'utente di inserire i numeri che ha memorizzato (5 volte)
+for (var i = 1; i <= 5; i++) {
+var numeroUtente = parseInt(prompt("Inserisci i numeri memorizzati: "));
+numeroUtente.push(userNumbers);
+}
+// controllo che i numeri inseriti dall'utente siano corretti
+if (randomNumbers.includes(numeroUtente)) {
+}
 });
 
 
